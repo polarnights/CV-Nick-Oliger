@@ -33,6 +33,7 @@ jobs:
     - uses: actions/checkout@v2
     - name: Add CV to github pages
       run: |
+          git pull
           docker cp suspicious_yalow:/NickOliger-CV-Docker/english.pdf .
           git add english.pdf
           git commit -m "Add CV to github pages"
