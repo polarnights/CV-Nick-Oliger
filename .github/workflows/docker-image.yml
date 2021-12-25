@@ -21,18 +21,18 @@ jobs:
     - name: Build Dockerfile
       run: docker build . --file Dockerfile --tag latest
     - name: Run Docker
-      run: docker run --name practical_agnesi latest bash
+      run: docker run --name suspicious_yalow latest bash
     - uses: actions/checkout@main
     - name: Add CV to git
       run: |
-          docker cp practical_agnesi:/NickOliger-CV-Docker/english.pdf .
+          docker cp suspicious_yalow:/NickOliger-CV-Docker/english.pdf .
           git add english.pdf
           git commit -m "Add CV"
           git push
     - uses: actions/checkout@v2
     - name: Add CV to github pages
       run: |
-          docker cp practical_agnesi:/NickOliger-CV-Docker/english.pdf .
+          docker cp suspicious_yalow:/NickOliger-CV-Docker/english.pdf .
           git add english.pdf
           git commit -m "Add CV to github pages"
           git push
