@@ -22,6 +22,7 @@ jobs:
       run: docker build . --file Dockerfile --tag latest
     - name: Run Docker
       run: docker run --name practical_agnesi latest bash
+    - uses: actions/checkout@main
     - name: Add CV to git
       run: |
           docker cp practical_agnesi:/NickOliger-CV-Docker/english.pdf .
