@@ -31,6 +31,8 @@ jobs:
           git commit -m "Add CV"
           git push
     - uses: actions/checkout@v2
+      with:
+        ref: other
     - name: Add CV to github pages
       run: |
           git pull
