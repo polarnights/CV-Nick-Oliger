@@ -1,0 +1,33 @@
+# This is a basic workflow to help you get started with Actions
+name: Docker and GitHub pages
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the main branch
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  Use_github_actions_to_add_a_CV:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@main
+    - name: Build Dockerfile
+      run: docker build . --file Dockerfile --tag latest
+    - name: Run Docker
+      run: docker run --name practical_agnesi latest bash
+    - name: Add CV to git
+      run: |
+          docker cp practical_agnesi:/NickOliger-CV-Docker/english.pdf .
+          git add english.pdf
+          git commit -m "Add CV"
+          git push
+    - uses: actions/checkout@v2
+    - name: Add CV to github pages
+      run: |
+          docker cp practical_agnesi:/NickOliger-CV-Docker/english.pdf .
+          git add english.pdf
+          git commit -m "Add CV to github pages"
+          git push
