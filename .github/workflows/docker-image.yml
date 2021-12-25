@@ -14,6 +14,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@main
+    - name: Configure git
+      run: |
+           git config --global user.email "nickoliger@edu.hse.ru"
+           git config --global user.name "Nick Oliger"
     - name: Build Dockerfile
       run: docker build . --file Dockerfile --tag latest
     - name: Run Docker
