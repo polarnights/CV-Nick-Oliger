@@ -1,7 +1,9 @@
-This is Nick Oliger's CV.
+# This is Nick Oliger's CV.
 
-Relevant for: december 2021.
+---
 
-Happy new year! :)
+Relevant for: *25/03/24*
 
-GH pages: https://nickmadeit.github.io/CV-Nick-Oliger/english.pdf
+Link: [GitHub pages](https://polarnights.github.io/CV-Nick-Oliger/english.pdf)
+
+---
